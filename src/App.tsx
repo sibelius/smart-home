@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, Flex } from 'rebass';
 import styled from 'styled-components';
-import { space, borders } from 'styled-system';
+import { space, borders, color, background } from 'styled-system';
 import logo from './img/logo.png';
 import { TextField } from '@material-ui/core';
 
@@ -13,9 +13,12 @@ import BillingIcon from './icons/BillingIcon';
 import EngineIcon from './icons/EngineIcon';
 import BellIcon from './icons/BellIcon';
 import ProfileIcon from './icons/ProfileIcon';
+import ProfileCard from './icons/ProfileCard';
 
 const Card = styled(Flex)`
   ${borders}
+  ${color}
+  ${background}
 `;
 
 const Sidebar = styled(Card)`
@@ -43,6 +46,14 @@ const SearchTextField = styled(TextField)`
   }
 `;
 
+const MemberCardTop = styled(Card)`
+  box-shadow: 0px 4px 40px rgba(238, 119, 127, 0.36);
+`
+
+const MemberCardBottom = styled(Card)`
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+`;
 
 type MenuItemProps = {
   icon: React.ReactNode,
@@ -75,15 +86,50 @@ const App = () => {
             </Flex>
           </Sidebar>
           <Content bg='white' width='100%' pt='45px' pl='65px' pr='65px'>
-            <Flex flex={1} justifyContent='flex-end' alignSelf='flex-start' alignItems='center'>
-              <SearchTextField
-                placeholder='Search'
-                variant='outlined'
-                />
-              <Flex ml='50px' alignSelf='flex-start' alignItems='center'>
-                <EngineIcon ml='9px' mr='9px' />
-                <BellIcon ml='9px' mr='9px' />
-                <ProfileIcon ml='9px' mr='9px' />
+            <Flex flex={1} flexDirection='column'>
+              <Flex justifyContent='flex-end' alignItems='center'>
+                <SearchTextField
+                  placeholder='Search'
+                  variant='outlined'
+                  />
+                <Flex ml='50px' alignItems='center'>
+                  <EngineIcon ml='9px' mr='9px' />
+                  <BellIcon ml='9px' mr='9px' />
+                  <ProfileIcon ml='9px' mr='9px' />
+                </Flex>
+              </Flex>
+              <Flex mt='20px' flexDirection='column'>
+                <Text fontSize='48px'>Members</Text>
+                <Flex mt='25px'>
+                  <MemberCardTop mt='37'
+                        backgroundColor='#EE777F' borderRadius='40px'
+                        width='250px'
+                        height='315px'
+                        flexDirection='column'
+                  >
+                    <Flex
+                      alignItems='center'
+                      flexDirection='column'
+                      mt='30px'
+                      mr='20px'
+                      ml='20px'
+                    >
+                      <ProfileCard color='#ffffff' />
+                      <Text mt='20px' fontSize='24px' color='#fff'>Annie Gulberg</Text>
+                      <Text mt='5px' fontSize='15px' color='#fff'>Owner</Text>
+                    </Flex>
+                    <MemberCardBottom
+                      flexDirection='column'
+                      backgroundColor='#FFF5F5'
+                      flex={1}
+                      pl='16px'
+                      mt='10px'
+                    >
+                      <Text mt='20px' color='#1D2343' fontSize='16px'>Status: At home</Text>
+                      <Text mt='10px' color='#1D2343' fontSize='16px'>Bedroom: 1</Text>
+                    </MemberCardBottom>
+                  </MemberCardTop>
+                </Flex>
               </Flex>
             </Flex>
           </Content>
