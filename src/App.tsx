@@ -3,12 +3,16 @@ import { Text, Flex } from 'rebass';
 import styled from 'styled-components';
 import { space, borders } from 'styled-system';
 import logo from './img/logo.png';
+import { TextField } from '@material-ui/core';
 
-import { ReactComponent as RoomsIcon } from './icons/rooms.svg';
-import { ReactComponent as SecurityIcon } from './icons/security.svg';
-import { ReactComponent as StatisticsIcon } from './icons/statistics.svg';
-import { ReactComponent as MembersIcon } from './icons/members.svg';
-import { ReactComponent as BillingIcon } from './icons/billing.svg';
+import RoomsIcon from './icons/RoomsIcon';
+import SecurityIcon from './icons/SecurityIcon';
+import StatisticsIcon from './icons/StatisticsIcon';
+import MembersIcon from './icons/MembersIcon';
+import BillingIcon from './icons/BillingIcon';
+import EngineIcon from './icons/EngineIcon';
+import BellIcon from './icons/BellIcon';
+import ProfileIcon from './icons/ProfileIcon';
 
 const Card = styled(Flex)`
   ${borders}
@@ -31,6 +35,15 @@ const Logo = styled.img`
   ${space}
 `;
 
+const SearchTextField = styled(TextField)`   
+  ${space}
+  .MuiOutlinedInput-root {
+    height: 34px;
+    border-radius: 30px;
+  }
+`;
+
+
 type MenuItemProps = {
   icon: React.ReactNode,
   label: string,
@@ -38,9 +51,9 @@ type MenuItemProps = {
 const MenuItem = ({ icon, label }: MenuItemProps) => {
   return (
     <Flex flexDirection='column' mt='40px'>
-      <RoomsIcon />
+      {icon}
       <Text color='#FFF5F5' fontSize='11px' mt='10px'>
-        Rooms
+        {label}
       </Text>
     </Flex>
   );
@@ -54,40 +67,25 @@ const App = () => {
           <Sidebar bg='#65BDC0' width='140px' p='10px' flexDirection='column'>
             <Logo src={logo} mt='30px' />
             <Flex mt='100px' ml='10px' flexDirection='column'>
-              <Flex flexDirection='column' mt='40px'>
-                <RoomsIcon />
-                <Text color='#FFF5F5' fontSize='11px' mt='10px'>
-                  Rooms
-                </Text>
-              </Flex>
-              <Flex flexDirection='column' mt='40px'>
-                <SecurityIcon />
-                <Text color='#FFF5F5' fontSize='11px' mt='10px'>
-                  Security
-                </Text>
-              </Flex>
-              <Flex flexDirection='column' mt='40px'>
-                <StatisticsIcon />
-                <Text color='#FFF5F5' fontSize='11px' mt='10px'>
-                  Statistics
-                </Text>
-              </Flex>
-              <Flex flexDirection='column' mt='40px'>
-                <MembersIcon />
-                <Text color='#FFF5F5' fontSize='11px' mt='10px'>
-                  Members
-                </Text>
-              </Flex>
-              <Flex flexDirection='column' mt='40px'>
-                <BillingIcon />
-                <Text color='#FFF5F5' fontSize='11px' mt='10px'>
-                  Billing
-                </Text>
-              </Flex>
+              <MenuItem icon={<RoomsIcon />} label='Rooms' />
+              <MenuItem icon={<SecurityIcon />} label='Security' />
+              <MenuItem icon={<StatisticsIcon />} label='Statistics' />
+              <MenuItem icon={<MembersIcon />} label='Members' />
+              <MenuItem icon={<BillingIcon />} label='Billing' />
             </Flex>
           </Sidebar>
-          <Content bg='white' width='100%'>
-            <span>Content</span>
+          <Content bg='white' width='100%' pt='45px' pl='65px' pr='65px'>
+            <Flex flex={1} justifyContent='flex-end' alignSelf='flex-start' alignItems='center'>
+              <SearchTextField
+                placeholder='Search'
+                variant='outlined'
+                />
+              <Flex ml='50px' alignSelf='flex-start' alignItems='center'>
+                <EngineIcon ml='9px' mr='9px' />
+                <BellIcon ml='9px' mr='9px' />
+                <ProfileIcon ml='9px' mr='9px' />
+              </Flex>
+            </Flex>
           </Content>
         </Card>
       </Flex>

@@ -16,8 +16,10 @@
   "dependencies": {
     "@material-ui/core": "4.9.14",
     "@material-ui/styles": "4.9.14",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-router-config": "5.1.1",
+    "react-router-dom": "5.2.0",
     "rebass": "4.0.7",
     "styled-components": "5.1.0",
     "styled-system": "5.1.5"
@@ -28,6 +30,8 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
+    "@types/react-router-config": "^5.0.1",
+    "@types/react-router-dom": "^5.1.5",
     "@types/rebass": "4.0.6",
     "@types/styled-components": "5.1.0",
     "@types/styled-system": "5.1.5",
