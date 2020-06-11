@@ -14,12 +14,8 @@ import EngineIcon from './icons/EngineIcon';
 import BellIcon from './icons/BellIcon';
 import ProfileIcon from './icons/ProfileIcon';
 import ProfileCard from './icons/ProfileCard';
-
-const Card = styled(Flex)`
-  ${borders}
-  ${color}
-  ${background}
-`;
+import { Card } from './ui/Card';
+import MemberCard from './MemberCard';
 
 const Sidebar = styled(Card)`
   border-top-left-radius: 60px;
@@ -101,34 +97,30 @@ const App = () => {
               <Flex mt='20px' flexDirection='column'>
                 <Text fontSize='48px'>Members</Text>
                 <Flex mt='25px'>
-                  <MemberCardTop mt='37'
-                        backgroundColor='#EE777F' borderRadius='40px'
-                        width='250px'
-                        height='315px'
-                        flexDirection='column'
-                  >
-                    <Flex
-                      alignItems='center'
-                      flexDirection='column'
-                      mt='30px'
-                      mr='20px'
-                      ml='20px'
-                    >
-                      <ProfileCard color='#ffffff' />
-                      <Text mt='20px' fontSize='24px' color='#fff'>Annie Gulberg</Text>
-                      <Text mt='5px' fontSize='15px' color='#fff'>Owner</Text>
-                    </Flex>
-                    <MemberCardBottom
-                      flexDirection='column'
-                      backgroundColor='#FFF5F5'
-                      flex={1}
-                      pl='16px'
-                      mt='10px'
-                    >
-                      <Text mt='20px' color='#1D2343' fontSize='16px'>Status: At home</Text>
-                      <Text mt='10px' color='#1D2343' fontSize='16px'>Bedroom: 1</Text>
-                    </MemberCardBottom>
-                  </MemberCardTop>
+                  <MemberCard
+                    backgroundColor='#EE777F'
+                    name='Annie Gulberg'
+                    title='Owner'
+                    status='Status: At home'
+                    bedroom='Bedroom: 1'
+                    ml='46px'
+                  />
+                  <MemberCard
+                    backgroundColor='#65BDC0'
+                    name='John Gulberg'
+                    title='Owner 2'
+                    status='Status: At home'
+                    bedroom='Bedroom: 1'
+                    ml='46px'
+                  />
+                  <MemberCard
+                    backgroundColor='#1D2343'
+                    name='Marie Gulberg'
+                    title='Owner 3'
+                    status='Status: Out'
+                    bedroom='Bedroom: 2'
+                    ml='46px'
+                  />
                 </Flex>
               </Flex>
             </Flex>
