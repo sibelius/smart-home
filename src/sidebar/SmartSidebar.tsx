@@ -27,10 +27,10 @@ const SmartSidebar = () => {
     <Sidebar bg='#65BDC0' width='140px' p='10px' flexDirection='column'>
       <Logo src={logo} mt='30px' />
       <Flex mt='100px' ml='10px' flexDirection='column'>
-        <MenuItem icon={<RoomsIcon />} label='Rooms' />
+        <MenuItem to='/kitchen' icon={<RoomsIcon />} label='Rooms' />
         <MenuItem icon={<SecurityIcon />} label='Security' />
         <MenuItem icon={<StatisticsIcon />} label='Statistics' />
-        <MenuItem icon={<MembersIcon />} label='Members' />
+        <MenuItem to='/members' icon={<MembersIcon />} label='Members' />
         <MenuItem icon={<BillingIcon />} label='Billing' />
       </Flex>
     </Sidebar>

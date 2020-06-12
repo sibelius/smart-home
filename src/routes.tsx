@@ -1,5 +1,6 @@
 import Layout from './Layout';
 import Members from './members/Members';
+import Kitchen from './Kitchen';
 
 export const routes = [
   {
@@ -15,6 +16,11 @@ export const routes = [
         exact: true,
         component: Members,
       },
+      {
+        path: '/kitchen',
+        exact: true,
+        component: Kitchen,
+      }
     ],
   },
 ];
