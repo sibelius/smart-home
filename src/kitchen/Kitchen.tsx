@@ -1,10 +1,14 @@
 import React from 'react';
 import { Flex, Text } from 'rebass';
 import styled from 'styled-components';
-import { Card } from './ui/Card';
-import TemperatureIcon from './icons/TemperatureIcon';
-import LightningIcon from './icons/LightningIcon';
-import HumidityIcon from './icons/HumidityIcon';
+import { Card } from '../ui/Card';
+import TemperatureIcon from '../icons/TemperatureIcon';
+import LightningIcon from '../icons/LightningIcon';
+import HumidityIcon from '../icons/HumidityIcon';
+import FridgeIcon from '../icons/FridgeIcon';
+import KettleIcon from '../icons/KettleIcon';
+import StoveIcon from '../icons/StoveIcon';
+import DishwasherIcon from '../icons/DishwasherIcon';
 
 const CardIndicator = styled(Card)`
   background: #FFFFFF;
@@ -12,6 +16,7 @@ const CardIndicator = styled(Card)`
   border-radius: 30px;
   padding: 20px;
   height: 200px;
+  min-width: 219px;
 `;
 
 const IndicatorValue = styled(Card)`
@@ -27,6 +32,16 @@ const Indicator = styled(Card)`
   align-self: flex-end;
   align-items: center;
   justify-content: center; 
+`;
+
+const Device = styled(Card)`
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.14);
+  border-radius: 30px;
+  padding: 20px;
+  width: 163px;
+  height: 131px;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Kitchen = () => {
@@ -77,6 +92,25 @@ const Kitchen = () => {
             </IndicatorValue>
           </Flex>
         </CardIndicator>
+      </Flex>
+      <Text mt='25px' fontSize='24px'>Device</Text>
+      <Flex mt='25px'>
+        <Device bg='#EE777F' flexDirection='column'>
+          <FridgeIcon />
+          <Text mt='14px' color='#fff'>Fridge</Text>
+        </Device>
+        <Device ml='26px' bg='#65BDC0' flexDirection='column'>
+          <KettleIcon />
+          <Text mt='14px' color='#fff'>Kettle</Text>
+        </Device>
+        <Device ml='26px' bg='#1D2343' flexDirection='column'>
+          <StoveIcon />
+          <Text mt='14px' color='#fff'>Stove</Text>
+        </Device>
+        <Device ml='26px' bg='#EE777F' flexDirection='column'>
+          <DishwasherIcon />
+          <Text mt='14px' color='#fff'>Dishwasher</Text>
+        </Device>
       </Flex>
     </Flex>
   )

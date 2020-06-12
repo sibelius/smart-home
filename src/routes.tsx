@@ -1,6 +1,6 @@
 import Layout from './Layout';
 import Members from './members/Members';
-import Kitchen from './Kitchen';
+import Kitchen from './kitchen/Kitchen';
 
 export const routes = [
   {
