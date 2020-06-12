@@ -1,8 +1,8 @@
 import { Flex, Text } from 'rebass';
-import ProfileCard from './icons/ProfileCard';
+import ProfileCard from '../icons/ProfileCard';
 import React from 'react';
 import styled from 'styled-components';
-import { Card } from './ui/Card';
+import { Card } from '../ui/Card';
 
 const MemberCardTop = styled(Card)`
   box-shadow: 0px 4px 40px rgba(238, 119, 127, 0.36);

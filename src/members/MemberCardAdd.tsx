@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card } from './ui/Card';
-import PlusIcon from './icons/PlusIcon';
+import { Card } from '../ui/Card';
+import PlusIcon from '../icons/PlusIcon';
 
 const MemberCardTop = styled(Card)`
   width: 250px;
