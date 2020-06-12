@@ -16,6 +16,7 @@ import ProfileIcon from './icons/ProfileIcon';
 import ProfileCard from './icons/ProfileCard';
 import { Card } from './ui/Card';
 import MemberCard from './MemberCard';
+import MemberCardAdd from './MemberCardAdd';
 
 const Sidebar = styled(Card)`
   border-top-left-radius: 60px;
@@ -96,7 +97,7 @@ const App = () => {
               </Flex>
               <Flex mt='20px' flexDirection='column'>
                 <Text fontSize='48px'>Members</Text>
-                <Flex mt='25px'>
+                <Flex mt='25px' flexWrap='wrap'>
                   <MemberCard
                     backgroundColor='#EE777F'
                     name='Annie Gulberg'
@@ -121,6 +122,7 @@ const App = () => {
                     bedroom='Bedroom: 2'
                     ml='46px'
                   />
+                  <MemberCardAdd />
                 </Flex>
               </Flex>
             </Flex>
